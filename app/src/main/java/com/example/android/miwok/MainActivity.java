@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
-
         TextView numbersTextView = (TextView) findViewById(R.id.numbers);
         numbersTextView.setOnClickListener(new View.OnClickListener(){
 
@@ -49,16 +48,24 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
 
-    public void gotoPhrasesActivity(View view){
+        TextView familyTextView = (TextView) findViewById(R.id.family);
+        familyTextView.setOnClickListener(new View.OnClickListener(){
 
-        Intent intent = new Intent(getApplicationContext(), PhrasesActivity.class);
-        startActivity(intent);
-    }
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), FamilyMembersActivity.class);
+                startActivity(intent);
+            }
+        });
 
-    public void gotoFamilyActivity(View view){
-        Intent intent = new Intent(getApplicationContext(), FamilyMembersActivity.class);
-        startActivity(intent);
+        TextView phrasesTextView = (TextView) findViewById(R.id.phrases);
+        phrasesTextView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PhrasesActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
