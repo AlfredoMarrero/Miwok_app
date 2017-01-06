@@ -10,17 +10,20 @@ public class Word {
     private String englishTranslation;
     private int imageResourceId = NO_IMAGE_PROVIDED;
     private static final int NO_IMAGE_PROVIDED = -1;
+    private int audioResourceId;
 
 
-    public Word(String miwok, String english){
+    public Word(String miwok, String english, int mediaId){
         miwokTranslation = miwok;
         englishTranslation = english;
+        audioResourceId= mediaId;
     }
 
-    public Word(String miwok, String english, int image){
+    public Word(String miwok, String english, int image, int mediaId){
         miwokTranslation = miwok;
         englishTranslation = english;
         imageResourceId = image;
+        audioResourceId = mediaId;
     }
 
     public String getEnglishTranslation(){
@@ -38,4 +41,9 @@ public class Word {
     public Boolean hasAnImage(){
         return imageResourceId != NO_IMAGE_PROVIDED;
     }
+
+    public int getAudioResourceId(){
+        return audioResourceId;
+    }
+
 }
