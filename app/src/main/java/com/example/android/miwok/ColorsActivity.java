@@ -73,11 +73,12 @@ public class ColorsActivity extends AppCompatActivity {
                     releaseMediaPlayer();
                     mediaPlayer = MediaPlayer.create(getApplicationContext(), words.get(position).getAudioResourceId());
                     mediaPlayer.start();
+                    mediaPlayer.setOnCompletionListener(onCompletionListener);
                 }
             }
         });
 
-        mediaPlayer.setOnCompletionListener(onCompletionListener);
+
     }
 
     @Override
