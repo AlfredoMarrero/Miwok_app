@@ -4,5 +4,6 @@
     android:layout_height="match_parent"
     android:id="@+id/word_list"
     android:orientation="vertical"
+    android:drawSelectorOnTop="true"
     >
 </ListView>
